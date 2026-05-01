@@ -268,3 +268,181 @@ text-align:center;
 }
 
 }
+
+
+/* ADD THIS TO BOTTOM OF style.css */
+
+/* PAGE HERO */
+
+.page-hero{
+padding:40px 7% 20px;
+text-align:center;
+}
+
+.page-hero h1{
+font-size:clamp(38px,6vw,64px);
+margin:18px 0 14px;
+font-weight:800;
+}
+
+.page-hero p{
+max-width:760px;
+margin:auto;
+color:#b7c0ea;
+line-height:1.7;
+font-size:18px;
+}
+
+/* SERVICES PAGE GRID */
+
+.services-grid-page{
+padding:40px 7%;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+}
+
+.service-card{
+padding:28px;
+border-radius:24px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+transition:.3s;
+box-shadow:0 0 18px rgba(57,216,255,.08);
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 28px rgba(57,216,255,.18);
+}
+
+.service-card h3{
+font-size:21px;
+margin-bottom:12px;
+}
+
+.service-card p{
+color:#b7c0ea;
+line-height:1.7;
+margin-bottom:16px;
+font-size:15px;
+}
+
+.service-card span{
+color:#8fe9ff;
+font-weight:700;
+}
+
+.premium-service{
+background:linear-gradient(
+135deg,
+rgba(57,216,255,.10),
+rgba(127,92,255,.12)
+);
+}
+
+/* WHY US */
+
+.why-us{
+padding:20px 7% 60px;
+}
+
+.why-us h2{
+text-align:center;
+font-size:42px;
+margin-bottom:30px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.why-box{
+padding:24px;
+border-radius:22px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.why-box h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.why-box p{
+color:#b7c0ea;
+font-size:14px;
+line-height:1.6;
+}
+
+/* CTA */
+
+.cta-section{
+padding:10px 7% 80px;
+text-align:center;
+}
+
+.cta-section h2{
+font-size:42px;
+margin-bottom:12px;
+}
+
+.cta-section p{
+color:#b7c0ea;
+margin-bottom:26px;
+font-size:17px;
+}
+
+/* TABLET */
+
+@media(max-width:1000px){
+
+.services-grid-page{
+grid-template-columns:1fr 1fr;
+}
+
+.why-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.page-hero{
+padding:20px 5%;
+}
+
+.page-hero p{
+font-size:16px;
+}
+
+.services-grid-page{
+padding:30px 5%;
+grid-template-columns:1fr;
+gap:16px;
+}
+
+.why-us{
+padding:10px 5% 50px;
+}
+
+.why-us h2,
+.cta-section h2{
+font-size:32px;
+}
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+.cta-section{
+padding:10px 5% 60px;
+}
+
+}
