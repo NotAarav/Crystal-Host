@@ -1,8 +1,168 @@
-/* Replace old .hero-right and .glass-card CSS with this */
+/* style.css */
 
-.hero-right{
-    width:100%;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#070b18;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Background Glow */
+
+.bg-blur{
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.45;
+    z-index:-1;
+}
+
+.one{
+    background:#39d8ff;
+    top:-100px;
+    left:-100px;
+}
+
+.two{
+    background:#7f5cff;
+    right:-100px;
+    bottom:-100px;
+}
+
+/* Navbar */
+
+.navbar{
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:20px;
+    font-weight:700;
+}
+
+.brand img{
+    width:42px;
+    height:42px;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#d6ddff;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#39d8ff;
+}
+
+.nav-btn{
+    text-decoration:none;
+    color:white;
+    padding:12px 20px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#39d8ff,#7f5cff);
+    font-weight:600;
+}
+
+/* Hero */
+
+.hero{
+    min-height:88vh;
+    padding:50px 7%;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.mini-badge{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:30px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    color:#8fe9ff;
+    font-size:14px;
+    margin-bottom:24px;
+}
+
+.hero-left h1{
+    font-size:70px;
+    line-height:1.05;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.hero-left p{
+    color:#b7c0ea;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:32px;
+    max-width:620px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:16px;
+    margin-bottom:42px;
+}
+
+.btn-main,
+.btn-alt{
+    text-decoration:none;
+    padding:15px 24px;
+    border-radius:14px;
+    font-weight:600;
+}
+
+.btn-main{
+    color:white;
+    background:linear-gradient(135deg,#39d8ff,#7f5cff);
+}
+
+.btn-alt{
+    color:white;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+}
+
+/* Stats */
+
+.stats{
+    display:flex;
+    gap:42px;
+}
+
+.stats h3{
+    font-size:28px;
+}
+
+.stats span{
+    color:#9ba7d7;
+    font-size:14px;
+}
+
+/* Right Cards */
 
 .service-grid{
     display:grid;
@@ -15,14 +175,14 @@
     border-radius:22px;
     background:rgba(255,255,255,.06);
     border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(16px);
+    backdrop-filter:blur(18px);
     transition:.35s ease;
     box-shadow:0 0 18px rgba(57,216,255,.08);
 }
 
 .glass-card:hover{
-    transform:translateY(-8px) scale(1.02);
-    box-shadow:0 0 30px rgba(57,216,255,.20);
+    transform:translateY(-8px);
+    box-shadow:0 0 28px rgba(57,216,255,.20);
     border-color:rgba(57,216,255,.35);
 }
 
@@ -34,8 +194,8 @@
 .glass-card p{
     color:#b7c0ea;
     font-size:14px;
-    margin-bottom:14px;
     line-height:1.5;
+    margin-bottom:12px;
 }
 
 .glass-card strong{
@@ -44,16 +204,52 @@
 }
 
 .premium{
-    background:linear-gradient(135deg,
+    background:linear-gradient(
+    135deg,
     rgba(57,216,255,.10),
-    rgba(127,92,255,.12));
+    rgba(127,92,255,.12)
+    );
 }
 
-/* Mobile */
-@media(max-width:800px){
+/* Responsive */
+
+@media(max-width:1000px){
+
+.hero{
+    grid-template-columns:1fr;
+}
+
+nav{
+    display:none;
+}
+
+.hero-left h1{
+    font-size:54px;
+}
+
+}
+
+@media(max-width:700px){
+
+.hero-left h1{
+    font-size:42px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.stats{
+    flex-direction:column;
+    gap:20px;
+}
 
 .service-grid{
     grid-template-columns:1fr;
+}
+
+.nav-btn{
+    display:none;
 }
 
 }
