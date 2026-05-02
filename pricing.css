@@ -294,6 +294,7 @@ outline:none;
 grid-template-columns:1fr;
 padding:30px 5% 60px;
 }
+
 }
 
 @media(max-width:700px){
@@ -301,4 +302,14 @@ padding:30px 5% 60px;
 font-size:34px;
 }
 
+}
+
+.billing-box select{
+color:white;
+background:#10172d;
+}
+
+.billing-box option{
+background:#10172d;
+color:white;
 }
