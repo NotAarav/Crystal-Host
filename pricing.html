@@ -123,11 +123,14 @@ Affordable hosting plans built for websites, developers, gamers and creators.
 
 
 <script>
+let currentPlan = "vps";
+
 function toggleMenu(){
 document.getElementById("mobileMenu").classList.toggle("show");
 }
 
 function openPlan(type){
+currentPlan = type;
 
 const popup = document.getElementById("popup");
 const title = document.getElementById("planTitle");
@@ -175,6 +178,10 @@ popup.classList.add("show");
 
 function closePlan(){
 document.getElementById("popup").classList.remove("show");
+}
+
+function goCheckout(){
+window.location.href = "checkout.html?plan=" + currentPlan;
 }
 </script>
 
