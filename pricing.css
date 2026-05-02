@@ -237,3 +237,68 @@ font-size:26px;
 }
 
 }
+
+/* CHECKOUT */
+
+.checkout-wrap{
+display:grid;
+grid-template-columns:1fr 1.1fr;
+gap:28px;
+padding:40px 7% 70px;
+}
+
+.order-box,
+.billing-box{
+padding:28px;
+border-radius:24px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.summary-card{
+padding:22px;
+border-radius:20px;
+background:rgba(255,255,255,.04);
+margin:18px 0;
+}
+
+.summary-card h1{
+font-size:40px;
+margin-top:14px;
+}
+
+.summary-list p{
+margin:12px 0;
+color:#b7c0ea;
+}
+
+.billing-box form{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.billing-box input,
+.billing-box select{
+padding:15px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.04);
+color:white;
+font-size:15px;
+outline:none;
+}
+
+@media(max-width:1000px){
+.checkout-wrap{
+grid-template-columns:1fr;
+padding:30px 5% 60px;
+}
+}
+
+@media(max-width:700px){
+.summary-card h1{
+font-size:34px;
+}
+
+}
