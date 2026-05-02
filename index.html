@@ -26,17 +26,18 @@
 <img src="logo.png" alt="Crystal Host">
 </div>
 
-<nav>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="pricing.html">Pricing</a>
 <a href="contact.html">Contact</a>
 </nav>
 
-<a href="#" class="btn-nav">Get Started</a>
+<a href="#" class="btn-nav desktop-btn">Get Started</a>
 
 </header>
-
 
 <section class="hero">
 
@@ -114,6 +115,12 @@ game servers and Discord bots with premium reliability.
 </div>
 
 </section>
+
+<script>
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
