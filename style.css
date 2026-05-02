@@ -455,3 +455,66 @@ padding:10px 5% 60px;
 }
 
 }
+
+/* Premium Mobile Navbar */
+
+.menu-toggle{
+display:none;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+color:white;
+font-size:24px;
+padding:8px 14px;
+border-radius:12px;
+cursor:pointer;
+}
+
+#mobileMenu{
+display:flex;
+gap:28px;
+}
+
+@media(max-width:1000px){
+
+.navbar{
+position:relative;
+flex-direction:row;
+align-items:center;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.desktop-btn{
+display:none;
+}
+
+#mobileMenu{
+display:none;
+position:absolute;
+top:78px;
+left:0;
+right:0;
+margin:auto;
+width:90%;
+padding:18px;
+border-radius:18px;
+background:rgba(10,15,30,.92);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);
+flex-direction:column;
+gap:16px;
+z-index:999;
+}
+
+#mobileMenu.show{
+display:flex;
+}
+
+#mobileMenu a{
+padding:10px 6px;
+font-size:16px;
+}
+
+}
