@@ -58,47 +58,61 @@ Affordable hosting plans built for websites, developers, gamers and creators.
 <h3>🌐 Shared Starter</h3>
 <p>1 Website • Free SSL • SSD</p>
 <h2>₹99<span>/mo</span></h2>
-<a href="#" class="btn-main">Choose Plan</a>
+<a href="#" class="btn-main" onclick="openPlan('shared')">Choose Plan</a>
 </div>
 
 <div class="price-card featured">
 <h3>⚡ VPS Pro</h3>
 <p>4 CPU • 8GB RAM • Root Access</p>
 <h2>₹699<span>/mo</span></h2>
-<a href="#" class="btn-main">Choose Plan</a>
+<a href="#" class="btn-main" onclick="openPlan('vps')">Choose Plan</a>
 </div>
 
 <div class="price-card">
 <h3>🖥 Dedicated Basic</h3>
 <p>Ryzen Power • Full Control</p>
 <h2>₹3999<span>/mo</span></h2>
-<a href="#" class="btn-main">Choose Plan</a>
+<a href="#" class="btn-main" onclick="openPlan('dedicated')">Choose Plan</a>
 </div>
 
 <div class="price-card">
 <h3>🎮 Minecraft Host</h3>
 <p>Low Ping • Plugins Support</p>
 <h2>₹149<span>/mo</span></h2>
-<a href="#" class="btn-main">Choose Plan</a>
+<a href="#" class="btn-main" onclick="openPlan('game')">Choose Plan</a>
 </div>
 
 <div class="price-card">
 <h3>🤖 Bot Hosting</h3>
 <p>24/7 Uptime • Fast Deploy</p>
 <h2>₹99<span>/mo</span></h2>
-<a href="#" class="btn-main">Choose Plan</a>
+<a href="#" class="btn-main" onclick="openPlan('bot')">Choose Plan</a>
 </div>
 
 <div class="price-card premium-service">
 <h3>💎 Enterprise</h3>
 <p>Custom Solutions & Managed Hosting</p>
 <h2>Custom</h2>
-<a href="#" class="btn-main">Contact Us</a>
+<a href="#" class="btn-main" onclick="openPlan('enterprise')">Contact Us</a>
 </div>
 
 </section>
 
+<div class="popup-overlay" id="popup">
 
+<div class="popup-box">
+
+<button class="close-popup" onclick="closePlan()">✕</button>
+
+<h2 id="planTitle">Plan Name</h2>
+
+<div id="planSpecs"></div>
+
+<a href="#" class="btn-main full-btn">Continue</a>
+
+</div>
+
+</div>
 
 <section class="cta-section">
 <h2>Need Something Bigger?</h2>
@@ -111,6 +125,56 @@ Affordable hosting plans built for websites, developers, gamers and creators.
 <script>
 function toggleMenu(){
 document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+function openPlan(type){
+
+const popup = document.getElementById("popup");
+const title = document.getElementById("planTitle");
+const specs = document.getElementById("planSpecs");
+
+const plans = {
+
+shared: {
+name:"Shared Starter",
+specs:"1 Website<br>10GB SSD Storage<br>Free SSL<br>cPanel Access<br>99.9% Uptime"
+},
+
+vps: {
+name:"VPS Pro",
+specs:"4 vCPU<br>8GB RAM<br>120GB NVMe SSD<br>2TB Bandwidth<br>Root Access"
+},
+
+dedicated: {
+name:"Dedicated Basic",
+specs:"Ryzen CPU<br>32GB RAM<br>1TB SSD<br>Full Control<br>Priority Support"
+},
+
+game: {
+name:"Minecraft Host",
+specs:"Low Ping India<br>Plugin Support<br>Daily Backups<br>DDoS Protection"
+},
+
+bot: {
+name:"Bot Hosting",
+specs:"24/7 Online<br>1GB RAM<br>Fast CPU<br>Auto Restart"
+},
+
+enterprise: {
+name:"Enterprise",
+specs:"Custom Hardware<br>Managed Hosting<br>Dedicated Support<br>Scalable Infrastructure"
+}
+
+};
+
+title.innerHTML = plans[type].name;
+specs.innerHTML = plans[type].specs;
+
+popup.classList.add("show");
+}
+
+function closePlan(){
+document.getElementById("popup").classList.remove("show");
 }
 </script>
 
