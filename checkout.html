@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crystal Host | Checkout</title>
+
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pricing.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="blur one"></div>
+<div class="blur two"></div>
+
+<header class="navbar">
+
+<div class="brand">
+<a href="index.html"><img src="logo.png" alt="Crystal Host"></a>
+</div>
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+
+
+<section class="page-hero">
+
+<span class="badge">💳 Secure Checkout</span>
+
+<h1>Complete Your Order</h1>
+
+<p>Premium hosting starts in seconds.</p>
+
+</section>
+
+
+
+<section class="checkout-wrap">
+
+<div class="order-box">
+
+<h2>Order Summary</h2>
+
+<div class="summary-card">
+<h3>⚡ VPS Pro</h3>
+<p>4 vCPU • 8GB RAM • 120GB SSD</p>
+<h1>₹699/mo</h1>
+</div>
+
+<div class="summary-list">
+<p>✔ Instant Setup</p>
+<p>✔ Root Access</p>
+<p>✔ 24/7 Support</p>
+<p>✔ 99.9% Uptime</p>
+</div>
+
+</div>
+
+
+
+<div class="billing-box">
+
+<h2>Billing Details</h2>
+
+<form onsubmit="showSuccess(event)">
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="text" placeholder="Phone Number">
+
+<input type="text" placeholder="Promo Code">
+
+<select required>
+<option value="">Select Payment Method</option>
+<option>UPI</option>
+<option>Debit / Credit Card</option>
+<option>Net Banking</option>
+</select>
+
+<button type="submit" class="btn-main full-btn">Complete Order</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<div class="popup-overlay" id="successPopup">
+
+<div class="popup-box">
+<h2>✅ Order Received</h2>
+<div id="planSpecs">
+Your order request has been submitted successfully.<br><br>
+Our team will contact you shortly.
+</div>
+
+<a href="index.html" class="btn-main full-btn">Back Home</a>
+</div>
+
+</div>
+
+
+
+<script>
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+function showSuccess(e){
+e.preventDefault();
+document.getElementById("successPopup").classList.add("show");
+}
+</script>
+
+</body>
+</html>
