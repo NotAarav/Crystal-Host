@@ -200,16 +200,25 @@ font-size:14px;
 grid-template-columns:1fr;
 }
 
+.navbar{
+flex-direction:column;
+align-items:flex-start;
+gap:18px;
+}
+
 nav{
-display:none;
+display:flex;
+flex-wrap:wrap;
+gap:14px;
 }
 
 .btn-nav{
-display:none;
+display:inline-block;
 }
 
 .hero-left{
 text-align:center;
+width:100%;
 }
 
 .hero-left p{
