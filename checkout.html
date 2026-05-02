@@ -125,6 +125,24 @@ function showSuccess(e){
 e.preventDefault();
 document.getElementById("successPopup").classList.add("show");
 }
+
+const plans = {
+shared:["🌐 Shared Starter","₹99/mo","1 Website • Free SSL • SSD"],
+vps:["⚡ VPS Pro","₹699/mo","4 vCPU • 8GB RAM • 120GB SSD"],
+dedicated:["🖥 Dedicated Basic","₹3999/mo","Ryzen CPU • 32GB RAM • 1TB SSD"],
+game:["🎮 Minecraft Host","₹149/mo","Low Ping • Plugin Support"],
+bot:["🤖 Bot Hosting","₹99/mo","24/7 Online • Fast CPU"],
+enterprise:["💎 Enterprise","Custom","Custom Business Hosting"]
+};
+
+const params = new URLSearchParams(window.location.search);
+const plan = params.get("plan") || "vps";
+
+window.onload = function(){
+document.querySelector(".summary-card h3").innerHTML = plans[plan][0];
+document.querySelector(".summary-card p").innerHTML = plans[plan][2];
+document.querySelector(".summary-card h1").innerHTML = plans[plan][1];
+}
 </script>
 
 </body>
